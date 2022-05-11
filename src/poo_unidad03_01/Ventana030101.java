@@ -34,6 +34,9 @@ public class Ventana030101 extends JFrame {
         this.setSize(dimension);
     }
     public void iniciarComponentes(){
+        this.iniciarPaneles();;
+    }
+    public void iniciarPaneles(){
         this.jPanellList.add(new JPanel());
         this.jPanellList.add(new JPanel());
         this.jPanellList.add(new JPanel());
@@ -47,6 +50,7 @@ public class Ventana030101 extends JFrame {
         this.jPanellList.add(new JPanel());
         
         this.jPanellList.get(0).setBackground(Color.WHITE);
+        this.jPanellList.get(0).setBorder(border);
         this.jPanellList.get(1).setBackground(Color.BLACK);
         this.jPanellList.get(2).setBackground(Color.GREEN);
         this.jPanellList.get(3).setBackground(Color.RED);
