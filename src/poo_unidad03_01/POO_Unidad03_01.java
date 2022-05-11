@@ -5,15 +5,6 @@
 package poo_unidad03_01;
 
 public class POO_Unidad03_01 {
-
-    public static void main(String[] args) {
-        
-        var v=new Ventana030101("Ventana 2022-05-10",800,600);
-        v.setVisible(true);
-        
-        
-        
-        
-    }
-    
+   
 }
+

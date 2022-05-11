@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Point;
 import java.util.ArrayList;
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -34,7 +35,7 @@ public class Ventana030101 extends JFrame {
         this.setSize(dimension);
     }
     public void iniciarComponentes(){
-        this.iniciarPaneles();;
+        this.iniciarPaneles();
     }
     public void iniciarPaneles(){
         this.jPanellList.add(new JPanel());
@@ -50,9 +51,11 @@ public class Ventana030101 extends JFrame {
         this.jPanellList.add(new JPanel());
         
         this.jPanellList.get(0).setBackground(Color.WHITE);
-        this.jPanellList.get(0).setBorder(border);
+        this.jPanellList.get(0).setBorder(BorderFactory.createTitledBorder("Panel 0"));
         this.jPanellList.get(1).setBackground(Color.BLACK);
+        this.jPanellList.get(1).setBorder(BorderFactory.createTitledBorder("Panel 1"));
         this.jPanellList.get(2).setBackground(Color.GREEN);
+        this.jPanellList.get(2).setBorder(BorderFactory.createTitledBorder("Panel 2"));
         this.jPanellList.get(3).setBackground(Color.RED);
         this.jPanellList.get(4).setBackground(Color.PINK);
         this.jPanellList.get(5).setBackground(Color.BLUE);
