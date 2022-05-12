@@ -27,16 +27,17 @@ public class Ventana0301b extends JFrame {
         this.setLocation(new Point(100,100));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.iniciarComponentes();
-        this.setLayout(new FlowLayout());
         this.setContentPane(this.panelPrincipal);
     }
+    public void iniciarComponentes(){
+        this.iniciarPanel();
+    }
     
-    private void iniciarComponentes(){
+    private void iniciarPanel(){
         this.panelPrincipal.setBackground(Color.PINK);
         this.panelPrincipal.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createEtchedBorder(), "Panel Principal"));
 
-        
         this.jLabelList.add(0,new JLabel());
         this.jLabelList.get(0).setText("Universidad Politécnica Salesiana");
         this.jLabelList.get(0).setBackground(Color.GREEN);
