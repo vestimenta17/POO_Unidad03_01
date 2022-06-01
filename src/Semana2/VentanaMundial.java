@@ -9,11 +9,15 @@ import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
 import javax.swing.JTextField;
 
 /**
@@ -28,11 +32,15 @@ public class VentanaMundial extends JFrame{
     private List<JPanel> jPanelList;
     private List<JButton> jButtonList;
     private List<JCheckBox> jCheckboxList;
+    private JComboBox jComboBox1;
+    private List<JRadioButton> jRadioButtonList1;
+    private ButtonGroup buttonGroup1;
+            
     
     public VentanaMundial(String title) throws HeadlessException {
         super(title);
-        this.setSize(500,600);
-        this.setLocation(30, 30);
+        this.setSize(800,600);
+        this.setLocation(80, 90);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.iniciarComponentes();
         this.setContentPane(this.jPanel1);
@@ -41,16 +49,20 @@ public class VentanaMundial extends JFrame{
     public void iniciarComponentes(){
         this.jPanel1 = new JPanel();
         this.jPanel1.setBackground(Color.RED);
-        this.jPanel1.setLayout(new GridLayout(6,1));
+        this.jPanel1.setLayout(new GridLayout(7,1));
         this.iniciarPaneles();
         this.iniciarEtiquetas();
         this.iniciarTextos();
         this.iniciarBotones();
         this.iniciarChecks();
+        this.iniciarCombo();
+        this.iniciarRadios();
     }
     
     public void iniciarPaneles(){
         this.jPanelList = new ArrayList<>();
+        this.jPanelList.add(new JPanel());
+        this.jPanelList.add(new JPanel());
         this.jPanelList.add(new JPanel());
         this.jPanelList.add(new JPanel());
         this.jPanelList.add(new JPanel());
@@ -67,7 +79,7 @@ public class VentanaMundial extends JFrame{
         this.jPanel1.add(this.jPanelList.get(3));
         this.jPanel1.add(this.jPanelList.get(4));
         this.jPanel1.add(this.jPanelList.get(5));
-        
+        this.jPanel1.add(this.jPanelList.get(6));
     }    
     public void iniciarEtiquetas(){
         this.jLabelList = new ArrayList<>();
@@ -75,11 +87,14 @@ public class VentanaMundial extends JFrame{
         this.jLabelList.add(new JLabel("Ingrese Nombre: "));
         this.jLabelList.add(new JLabel("Ingrese Edición: "));
         this.jLabelList.add(new JLabel("Ingrese Auspiciantes: "));
+        this.jLabelList.add(new JLabel("Seleccione Mascota: "));
+        this.jLabelList.add(new JLabel("Seleccione la confederacion: "));
         this.jPanelList.get(0).add(this.jLabelList.get(0));
         this.jPanelList.get(1).add(this.jLabelList.get(1));
         this.jPanelList.get(2).add(this.jLabelList.get(2));
         this.jPanelList.get(3).add(this.jLabelList.get(3));
-        
+        this.jPanelList.get(4).add(this.jLabelList.get(4));
+        this.jPanelList.get(5).add(this.jLabelList.get(5));
     }    
     public void iniciarTextos(){
         this.jTextFieldList = new ArrayList<>();
@@ -99,8 +114,8 @@ public class VentanaMundial extends JFrame{
         this.jButtonList.add(new JButton());
         this.jButtonList.get(0).setText("REGISTRAR");
         this.jButtonList.get(1).setText("BORRAR");
-        this.jPanelList.get(4).add(this.jButtonList.get(0));
-        this.jPanelList.get(4).add(this.jButtonList.get(1));  
+        this.jPanelList.get(6).add(this.jButtonList.get(0));
+        this.jPanelList.get(6).add(this.jButtonList.get(1));  
     }
     public void iniciarChecks(){
         this.jCheckboxList= new ArrayList<>();
@@ -115,6 +130,54 @@ public class VentanaMundial extends JFrame{
         this.jPanelList.get(3).add(this.jCheckboxList.get(2)); 
         this.jPanelList.get(3).add(this.jCheckboxList.get(3));
         this.jPanelList.get(3).add(this.jCheckboxList.get(4)); 
+    }
+    public void iniciarCombo(){
+        this.jComboBox1= new JComboBox();
+        this.jComboBox1.addItem("Sin Mascota");
+        this.jComboBox1.addItem("Willie");
+        this.jComboBox1.addItem("Juanito");
+        this.jComboBox1.addItem("Tip y Tap");
+        this.jComboBox1.addItem("Guachito mundialito");
+        this.jComboBox1.addItem("Naranjito");
+        this.jComboBox1.addItem("Pique");
+        this.jComboBox1.addItem("Ciao");
+        this.jComboBox1.addItem("SNo sabe/ No conoce");
+        this.jPanelList.get(4).add(this.jComboBox1);
+        
+    }
+    public void iniciarRadios(){
+        this.jRadioButtonList1 = new ArrayList<>();
+        this.jRadioButtonList1.add(new JRadioButton());
+        this.jRadioButtonList1.add(new JRadioButton());
+        this.jRadioButtonList1.add(new JRadioButton());
+        this.jRadioButtonList1.add(new JRadioButton());
+        this.jRadioButtonList1.add(new JRadioButton());
+        this.jRadioButtonList1.add(new JRadioButton());
+        
+        this.jRadioButtonList1.get(0).setText("UEFA");
+        this.jRadioButtonList1.get(1).setText("Conmebol");
+        this.jRadioButtonList1.get(2).setText("Concacaf");
+        this.jRadioButtonList1.get(3).setText("AFC");
+        this.jRadioButtonList1.get(4).setText("OFC");
+        this.jRadioButtonList1.get(5).setText("CAF");
+        
+        this.buttonGroup1= new ButtonGroup();
+        this.buttonGroup1.add(this.jRadioButtonList1.get(0));
+        this.buttonGroup1.add(this.jRadioButtonList1.get(1));
+        this.buttonGroup1.add(this.jRadioButtonList1.get(2));
+        this.buttonGroup1.add(this.jRadioButtonList1.get(3));
+        this.buttonGroup1.add(this.jRadioButtonList1.get(4));
+        this.buttonGroup1.add(this.jRadioButtonList1.get(5));
+        
+        this.jPanelList.get(5).add(this.jRadioButtonList1.get(0));
+        this.jPanelList.get(5).add(this.jRadioButtonList1.get(1));
+        this.jPanelList.get(5).add(this.jRadioButtonList1.get(2));
+        this.jPanelList.get(5).add(this.jRadioButtonList1.get(3));
+        this.jPanelList.get(5).add(this.jRadioButtonList1.get(4));
+        this.jPanelList.get(5).add(this.jRadioButtonList1.get(5));
+        
+       
+        
     }
     
     
